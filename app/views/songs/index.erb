@@ -1,3 +1,7 @@
+<div class="page-header">
+  <h1>All songs <small></small></h1>
+</div>
+
 <% @songs.each do |song| %>
   <div class="song">
     <h3><a href="/songs/<%= song.id %>"><%= song.title %> </a> <small>(by: <%= song.author %>)</small></h3>
