@@ -1,0 +1,32 @@
+
+  <div class="col-md-5">
+    <form method="POST" action="/movies/<%= @movie %>/reviews/create">
+     
+      <legend><span class="number"></span>
+      <span class="title">Create Review</span></legend>
+      <br>
+        <div class="form-group">
+          <label for="movietitle">Title</label>
+          <input type="text" class="form-control" id="movietitle" placeholder="movie title" name="title">
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input type="date" class="form-control" id="date" 
+          placeholder="dd/mm/yyyy" name="date">
+        </div>
+
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control" id="username" placeholder="username" value="<%= current_user.username%>">
+        </div>    
+        
+        <div class="form-group">
+          <label for="thoughts">Review</label>
+          <input type="text" class="form-control" id="thoughts" placeholder="write review here..." name="thoughts">
+        </div>            
+
+    <input class="submit" type="submit" value="Submit Review">
+    </div>
+  </div> 
+  </form>

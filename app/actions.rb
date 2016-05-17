@@ -86,16 +86,11 @@ get '/songs/:id' do
   erb :'songs/show'
 end
 
-# get '/songs/:id' do 
-#   @song = Song.find(params[:id])
-#   erb(:'songs/show')
-# end
-
 get '/songs/upvote/:id' do
   @vote = Vote.new(
     upvote: true,
     song_id: params[:id],
-    user_id: session['id']
+    user_id: session[:user_id]
   )
 
   @vote.save
@@ -107,7 +102,7 @@ get '/songs/downvote/:id' do
   @vote = Vote.new(
     upvote: false,
     song_id: params[:id],
-    user_id: session['id']
+    user_id: session[:user_id]
   )
 
   @vote.save

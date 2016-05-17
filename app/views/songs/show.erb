@@ -1,13 +1,14 @@
-<h1><%= @song.title %></h1>
 
-<p>Author: <%= @song.author %></p>
+    <h1><%= @song.title %></h1>
 
-<p><a href='<%= @song.url %>'>Search link</a></p>
+    <p>Author: <%= @song.author %></p>
 
-<p>upvotes: <%= @upvotes %></p>
-<p><a href='/songs/upvote/<%= @song.id %>'>upvote</a></p>
+    <p><a href='<%= @song.url %>'>Go listen!</a></p>
 
-<p>downvotes: <%= @downvotes %></p>
-<p><a href='/songs/downvote/<%= @song.id %>'>downvote</a></p>
+    <p>upvotes: <%= @upvotes %></p>
+    <p><a href='/songs/upvote/<%= @song.id %>'>upvote</a></p>
 
-<h6><a href='/songs'>Return to see all songs</a></h6>
+    <p>downvotes: <%= @downvotes %></p>
+    <p><a href='/songs/downvote/<%= @song.id %>'>downvote</a></p>
+
+    <h6><a href='/songs'>Return to see all songs</a></h6>

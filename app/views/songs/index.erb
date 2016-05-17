@@ -5,9 +5,9 @@
   <p>add songs <a href="/songs/new">here</a></p>
   <% @songs.each do |song| %>
     
-    <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
+<div class="row">
+ <div class="clearfix visible-xs-block"></div>
+  <div class="col-xs-6 col-sm-4">
       <div class="song">
         <h3><a href="/songs/<%= song.id %>"><%= song.title %> <small>(by: <%= song.author %>)</small></a></h3>
         <p>
