@@ -1,0 +1,46 @@
+
+<div class="container-fluid">
+  <div class="row"> 
+    <h2>Signup</h2>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row"> 
+    <ul class="errors">
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+      </ul>
+  </div>
+</div>
+
+  <div class="container">
+    <div class="row">
+    <div class="col-md-5">
+    <form method="POST" action="/signup">
+
+      <legend><span class="number"></span>
+        <span class="title"> New Users</span></legend>
+    
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" class="form-control" value="<%= @user.username %>">
+      </div>
+
+            <div class ="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" value="<%= @user.email %>">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" name="password">
+      </div>
+
+     <input class="submit" type="submit" value="Sign Up">
+    </div>
+  </form>
+  </div>
+
+

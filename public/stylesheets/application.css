@@ -1,0 +1,14 @@
+.row {
+  position: static;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  position: inline-block;
+}
+
+.thumbnail img {
+  width: 30%;
+  height: 30%;
+}
