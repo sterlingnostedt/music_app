@@ -111,6 +111,28 @@ get '/songs/downvote/:id' do
   redirect '/songs/' + params[:id]
 end
 
+get '/songs/:id/reviews' do
+  @song = Song.find params[:id]
+  @reviews = Review.where(song_id: @song.id)
+  @new_review = Review.new
+  erb :'songs/review'
+end
+
+post '/songs/:id/reviews' do
+  @review = Review.create(
+    song_id: params[:id],
+    user_id: session[:user_id],
+    title: params[:title],
+    content: params[:content],
+    rating: params[:rating]
+    )
+    redirect '/songs'
+end
+
+get '/songs/:id/new_review' do
+  @song = Song.find params[:id]
+  erb :'songs/new_review'
+end
 
 # post '/votes' do
 #   song_id = params[:song_id]
