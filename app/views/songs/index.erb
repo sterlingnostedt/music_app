@@ -4,17 +4,18 @@
 
   <p>add songs <a href="/songs/new">here</a></p>
   <% @songs.each do |song| %>
-    
-<div class="row">
+ 
+
+<div class="col-sm-6">
  <div class="clearfix visible-xs-block"></div>
-  <div class="col-xs-6 col-sm-4">
-      <div class="song">
+ <!--  <div class="col-md-6"> -->
+      <div class="song_list">
         <h3><a href="/songs/<%= song.id %>"><%= song.title %> <small>(by: <%= song.author %>)</small></a></h3>
         <p>
           <%= song.url %>
         </p>
       </div>
-      </div>
+<!--       </div> -->
     </div>
     </div>
   <% end %>

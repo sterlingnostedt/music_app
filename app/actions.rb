@@ -6,6 +6,7 @@ end
 
 # Homepage (Root path)
 get '/' do
+  @songs = Song.all.reverse
   erb :index
 end
 

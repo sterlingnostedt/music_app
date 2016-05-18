@@ -4,24 +4,36 @@
 <div class="container-fluid">
   <div class="row">
     <h1 class="text-center"></h1>
-  </div>
-  <div class="container-fluid">
+</div>
+<div class="container-fluid">
   <div class="row">
     <h1 class="text-center"></h1>
   </div>
 </div>
 
-
-
 <div class="container-fluid">
-<div class="row">
-  <div class="col-md-6 header-options">
-    <h4><a class="text-center" href="/songs">List of songs</a></h4>
+  <div class="row">
+  <div class="col-md-2 header-options">
+    <h2><a class="text-center" href="/songs">All songs</a></h2>
   </div>
-  <div class="col-md-6 header-options">
-    <h4><a class="text-center" href="/songs/new">Add a new song!</a></h4>
+  <div class="col-md-2 header-options">
+    <h2><a class="text-center" href="/songs/new">New song</a></h2>
+  </div>
   </div>
 </div>
-</div>
+
+<% @songs.each_slice(3) do |slice| %>
+  <div class="row">
+  <% slice.each do |song| %>
+    <div class="col-md-3 songs">
+      <a href="/songs/ <%= song.id %>"><br>
+      <h4><%= song.title %></h4></a>
+    </div>
+  <% end %> 
+  </div>
+<% end %>
+
+
+
 
 
