@@ -5,6 +5,12 @@
 
     <p>'<%= @song.url %>'</p>
 
+    <p>
+    <p>
+      Shared by: <%= @song.user.try(:username) %><br> 
+      <a href = '/songs/<%= @song.id %>/reviews'>Reviews </a>
+    </p>
+
     <p>upvotes: <%= @upvotes %></p>
     <p><a href='/songs/upvote/<%= @song.id %>'>upvote</a></p>
 
@@ -12,3 +18,6 @@
     <p><a href='/songs/downvote/<%= @song.id %>'>downvote</a></p>
 
     <h6><a href='/songs'>Return to see all songs</a></h6>
+
+
+  
